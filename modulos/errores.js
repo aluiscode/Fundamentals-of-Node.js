@@ -17,13 +17,14 @@ function seRompeAsincrona(cb){
     },1000)
 }
 
-try{
-    seRompeAsincrona(() => {
-        console.log('Hay error')
-    })
-}catch(error){
-    console.error('Algo se ha roto')
-    console.error(error)
-}
+
+seRompeAsincrona(() => {
+    console.log('Hay error')
+})
+
+setTimeout(()=>{
+    console.log('Still alive')
+},2000)
+
 
 console.log('El final')
